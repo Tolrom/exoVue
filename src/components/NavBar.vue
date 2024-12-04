@@ -20,6 +20,8 @@
           <ul class="dropdown-menu">
             <li><router-link class="dropdown-item" to="/text-interpolation">Exemples Interpolation</router-link></li>
             <li><router-link class="dropdown-item" to="/tp-01">TP-01</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-02">TP-02</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-03">TP-03</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">C'est déjà pas mal</a></li>
           </ul>
