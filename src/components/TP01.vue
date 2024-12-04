@@ -17,7 +17,7 @@
 
 <script setup lang='js'>
 
-const image = '/src/assets/roma.png',
+const image = 'https://i.ibb.co/jwZ3d5b/roma.jpg',
       nom = 'Romaricson',
       age = 64;
 
