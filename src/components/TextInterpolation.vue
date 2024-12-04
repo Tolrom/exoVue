@@ -1,51 +1,40 @@
 <template>
-  <div>
-    <input v-model="value" />
+  <div class="bg-warning-subtle">
+    <h5>Text Interpolation Mode : Composition</h5>
+    <p class="text-center">{{ randomizer() }} est le meilleur formateur de l'Adrar</p>
+    <p class="text-center">{{unLivre}}</p>
+    <p class="text-center">{{isOnline}}</p>
+    <p class="text-center">{{unNombre}}</p>
+    <p class="text-center">{{unTableau}}</p>
+    <p class="text-center">{{unTableau[0]}}</p>
+    <p class="text-center">{{unObjet}}</p>
+    <p class="text-center">{{unObjet.name}}</p>
+    <p class="text-center">{{unObjet['name']}}</p>
+    <p class="text-center">{{unObjet.cool}}</p>
   </div>
 </template>
 
-<script setup lang='js'>
-import { computed, watch, onMounted, onUpdated, onBeforeUnmount } from 'vue'
+<script lang='js' setup>
+import { ref } from 'vue'
 
-const props = defineProps({
-  // v-model
-  modelValue: {
-    default: '',
-  },
+const unLivre = ref('Les mémoires de Steven Seagal');
+const unTableau = ref(['du texte', 99]);
+const unNombre = ref(1234567890);
+const isOnline=ref(false);
+const unObjet = ref({
+  name: 'COOL',
+  tel: '060503030',
 });
 
-const emit = defineEmits({
-  // v-model event with validation
-  'update:modelValue': (value) => value !== null,
-});
-
-const value = computed({
-  get () {
-    return props.modelValue;
-  },
-  set (value) {
-    emit('update:modelValue', value);
-  },
-});
-
-const stopWatch = watch(
-  () => props.modelValue, async (_newValue, _oldValue) => {
-    // do something
-  },
-  {
-    immediate: true
+function randomizer(){
+  let r = Math.random();
+  if (r > 0.5) {
+    return 'Jeff';
   }
-);
-
-onMounted(() => {
-});
-
-onUpdated(() => {
-});
-
-onBeforeUnmount(() => {
-  stopWatch();
-});
+  else {
+    return 'Yann';
+  }
+}
 
 </script>
 

@@ -6,6 +6,6 @@ import { RouterView } from 'vue-router';
 
 <template>
   <NavBar></NavBar>  
-  <router-view class="min-vw-100"></router-view>
+  <router-view class="min-vw-100" msg="SALUT LA TCHEAM"></router-view>
   <Footer class="min-vw-100"></Footer>
 </template>

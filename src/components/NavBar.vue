@@ -19,7 +19,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><router-link to="/interpolation" class="dropdown-item">Interpolation</router-link></li>
-            <li><router-link class="dropdown-item" to="#">Another action</router-link></li>
+            <li><router-link class="dropdown-item" to="/text-interpolation">Another action</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
