@@ -28,10 +28,6 @@ watch(cssClass, async  (newValue, oldValue) => {
   }
 });
 
-watch(color,async (newValue, oldValue) => {
-  
-})
-
 function displayTitle(){
   console.log('Au moins ça marche')
   if(display.value === 'block'){
