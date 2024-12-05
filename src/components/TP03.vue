@@ -14,7 +14,6 @@ import { ref } from 'vue';
 const content = ref('');
 
 const escapeContent = ref('');
-let input2 = '';
 
 function addKey(evt){
   content.value = evt.target.value;

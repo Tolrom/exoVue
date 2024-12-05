@@ -34,6 +34,11 @@ const routes = [
     component: () => import("../components/TP03.vue"),
   },
   {
+    path: '/tp-04',
+    name : 'Quatrième TP',
+    component: () => import("../components/TP04.vue"),
+  },
+  {
     path : '/:pathMatch(.*)*',
     name : 'Not Found',
     component : () => import("../components/NotFound.vue"),
