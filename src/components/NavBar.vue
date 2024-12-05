@@ -24,6 +24,7 @@
             <li><router-link class="dropdown-item" to="/tp-03">TP-03</router-link></li>
             <li><router-link class="dropdown-item" to="/tp-04">TP-04</router-link></li>
             <li><router-link class="dropdown-item" to="/tp-05">TP-05</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-06">TP-06</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">C'est déjà pas mal</a></li>
           </ul>
