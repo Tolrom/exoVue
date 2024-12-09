@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card w-20 d-flex flex-column p-2 m-2 bg-success">
-      <h1>{{ name }}{{ premium ? ' - Ami premium' : ' - Ami nul' }}</h1>
+      <h1>{{ name }} <h3 class="btn btn-danger"> {{ premium ? 'Ami premium' : 'Ami nul' }}</h3></h1>
       <!-- <h2>{{ testPremium() }}</h2> -->
       <button class="btn btn-primary"  @click="displayDetails()" >{{ messageDisplayDetails }}</button>
       <div v-if="details">
@@ -18,6 +18,10 @@ import { computed, ref } from 'vue'
 
 
 const props = defineProps({
+    key: {
+      type: String,
+      required: true,
+    },
     name: {
       type : String,
       required : true,
@@ -42,6 +46,9 @@ const props = defineProps({
 
 function displayDetails(){
   details.value = !details.value;
+}
+function premium(){
+
 }
 
 
