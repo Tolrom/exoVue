@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div class="card w-20 d-flex flex-column p-2 m-2 bg-success" >
-      <h1>{{ name }}</h1>
+    <div class="card w-20 d-flex flex-column p-2 m-2 bg-success">
+      <h1>{{ name }}{{ premium ? ' - Ami premium' : ' - Ami nul' }}</h1>
+      <!-- <h2>{{ testPremium() }}</h2> -->
       <button class="btn btn-primary"  @click="displayDetails()" >{{ messageDisplayDetails }}</button>
-      <div>
-        <h2 v-if="details">{{ phone }}</h2>
-        <h2 v-if="details">{{ mail }}</h2>
+      <div v-if="details">
+        <h2>{{ phone }}</h2>
+        <h2>{{ mail }}</h2>
       </div>
     </div>
   </div>
@@ -14,15 +15,35 @@
 <script setup lang='js'>
 import { computed, ref } from 'vue'
 
+
+
 const props = defineProps({
-    name: String,
-    phone: String,
-    mail: String
+    name: {
+      type : String,
+      required : true,
+    },
+    phone: {
+      type : String,
+      required : true,
+    },
+    mail: {
+      type : String,
+      required : true,
+    },
+    premium: {
+      type : Boolean,
+      required : false,
+      default : false,
+      // validator : (value)=>{
+      //   return value === 'abc' || value === 'xyz';
+      // },
+    },
 });
 
 function displayDetails(){
   details.value = !details.value;
 }
+
 
 const details = ref(false);
 
