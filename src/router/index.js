@@ -50,13 +50,18 @@ const routes = [
   },
   {
     path: '/tp-07',
-    name : 'Huitième TP',
+    name : 'Septième TP',
     component: () => import("../components/TP07.vue"),
   },
   {
     path: '/tp-08',
-    name : 'Septième TP',
+    name : 'Huitième TP',
     component: () => import("../components/TP08.vue"),
+  },
+  {
+    path: '/tp-09',
+    name : 'Neuvième TP',
+    component: () => import("../components/TP09.vue"),
   },
   {
     path : '/:pathMatch(.*)*',
