@@ -19,22 +19,20 @@
           </a>
           <ul class="dropdown-menu">
             <li><router-link class="dropdown-item" to="/text-interpolation">Exemples Interpolation</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-01">TP-01</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-02">TP-02</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-03">TP-03</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-04">TP-04</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-05">TP-05</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-06">TP-06</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-07">TP-07</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-08">TP-08</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-09">TP-09</router-link></li>
-            <li><router-link class="dropdown-item" to="/tp-10">TP-10</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-01">TP-01 (data interpolation)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-02">TP-02 (onclick)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-03">TP-03 (keyup)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-04">TP-04 (functions)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-05">TP-05 (binding recap)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-06">TP-06 (style binding)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-07">TP-07 (class binding)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-08">TP-08 (v-for)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-09">TP-09 (v-if / v-for)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-10">TP-10 (props)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-11">TP-11 (lifecycle)</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">C'est déjà pas mal</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Désactivé</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
