@@ -7,7 +7,7 @@
       </li>
     </ul>
 
-    <div class="bg-primary-subtle p-2 w-50 h-100" >
+    <div v-if="meteo" class="bg-primary-subtle p-2 w-50 h-100" >
       <p>{{ meteo.city_info.name }}</p>
       <p>{{ meteo.city_info.country }}</p>
       <p>{{ meteo.current_condition.date }}</p>
@@ -22,9 +22,9 @@
 import { ref, onMounted, onUpdated, onBeforeUnmount } from 'vue'
 
 const pokeList = ref({}),
-      meteo = ref({});
+      meteo = ref(null);
 
-onMounted(async () => {
+async function fetchPoke(){
   try {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
     if (!response.ok) {
@@ -38,7 +38,9 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error fetching Pokemon data:', error.message);
   }
+}
 
+async function fetchMeteo() {
   try {
     const response = await fetch('https://prevision-meteo.ch/services/json/toulouse');
     if (!response.ok) {
@@ -52,6 +54,12 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error fetching weather data:', error.message);
   }
+}
+  
+
+onMounted(() => {
+  fetchPoke();
+  fetchMeteo();  
 });
 
 

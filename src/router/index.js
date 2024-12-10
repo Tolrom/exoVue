@@ -74,6 +74,19 @@ const routes = [
     component: () => import("../components/TP11.vue"),
   },
   {
+    path: '/tp-12',
+    name : 'Douzième TP',
+    component: () => import("../components/TP12.vue"),
+    children: [
+      {
+        path: ':id',
+        name: 'item',
+        component: () => import("../components/Item.vue"),
+        props: (route) => ({ id: route.params.id, name: route.query.name }),
+      },
+    ],
+  },
+  {
     path : '/:pathMatch(.*)*',
     name : 'Not Found',
     component : () => import("../components/NotFound.vue"),

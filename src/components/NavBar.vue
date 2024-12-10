@@ -30,6 +30,7 @@
             <li><router-link class="dropdown-item" to="/tp-09">TP-09 (v-if / v-for)</router-link></li>
             <li><router-link class="dropdown-item" to="/tp-10">TP-10 (props)</router-link></li>
             <li><router-link class="dropdown-item" to="/tp-11">TP-11 (lifecycle)</router-link></li>
+            <li><router-link class="dropdown-item" to="/tp-12">TP-12 (items routing)</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">C'est déjà pas mal</a></li>
           </ul>
