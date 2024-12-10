@@ -4,7 +4,7 @@
     <h1 :class="{hello: hello, world: world}" :style="{display : display}">Bonjour le monde de classes</h1>
     <input type="text"v-model="color">
     <h1 :style="'background-color :'+color"  >Bonjour le monde de couleurs</h1>
-    <button class="btn btn-primary" @click="displayTitle()" >Afficher le 1er titre</button>
+    <button class="btn btn-primary" @click="displayTitle()" >{{`${display == 'block' ? 'Masquer' : 'Afficher'} le 1er titre`}}</button>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <div>
     <OneFriend
       v-for="ami in lesAmis" 
-      :key="ami.id" 
+      :id="ami.id" 
       :name="ami.name" 
       :phone="ami.phone" 
       :mail="ami.email" 
@@ -34,8 +34,9 @@ const lesAmis = ref([
     }
 ]);
 
-function reactionStatus(){
-  alert('Ca marche');
+function reactionStatus(leId){
+  let result = lesAmis.value.find((e)=> e.id=leId) 
+  console.log(result);
 }
 
 </script>

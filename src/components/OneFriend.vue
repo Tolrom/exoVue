@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card w-20 d-flex flex-column p-2 m-2 bg-success">
-      <h1>{{ name }} <btn class="btn btn-danger" @click="premiumiser()"> {{ premiumData ? 'Ami premium' : 'Ami nul' }}</btn></h1>
+      <h1>{{ name }} <button class="btn btn-danger" @click="premiumiser()"> {{ premiumData ? 'Ami premium' : 'Ami nul' }}</button></h1>
       <!-- <h2>{{ testPremium() }}</h2> -->
       <button class="btn btn-primary"  @click="displayDetails()" >{{ messageDisplayDetails }}</button>
       <div v-if="details">
@@ -15,11 +15,8 @@
 <script setup lang='js'>
 import { computed, ref } from 'vue'
 
-
-
 const props = defineProps({
-    key: {
-      type: String,
+    id : {
       required: true,
     },
     name: {
@@ -40,6 +37,9 @@ const props = defineProps({
       default : false,
     },
 });
+const premiumData = ref(props.premium);
+const details = ref(false);
+const emit = defineEmits(['mon-event-premium']);
 
 function displayDetails(){
   details.value = !details.value;
@@ -47,14 +47,9 @@ function displayDetails(){
 
 function premiumiser() {
   premiumData.value = !premiumData.value;
-  emit('mon-event-premium');
+  emit('mon-event-premium', props.id);
 }
 
-const premiumData = ref(props.premium)
-
-const details = ref(false);
-
-const emit = defineEmits(['mon-event-premium']);
 
 const messageDisplayDetails = computed(()=>{
   return details.value ? 'Masquer les détails' : 'Afficher les détails';
