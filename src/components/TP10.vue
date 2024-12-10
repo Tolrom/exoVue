@@ -7,6 +7,7 @@
       :phone="ami.phone" 
       :mail="ami.email" 
       :premium="ami.premium" 
+      @mon-event-premium="reactionStatus"
     >
     </OneFriend>
   </div>
@@ -32,6 +33,10 @@ const lesAmis = ref([
         premium: true
     }
 ]);
+
+function reactionStatus(){
+  alert('Ca marche');
+}
 
 </script>
 

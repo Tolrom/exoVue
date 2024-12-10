@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card w-20 d-flex flex-column p-2 m-2 bg-success">
-      <h1>{{ name }} <div class="btn btn-danger"> {{ premium ? 'Ami premium' : 'Ami nul' }}</div></h1>
+      <h1>{{ name }} <btn class="btn btn-danger" @click="premiumiser()"> {{ premiumData ? 'Ami premium' : 'Ami nul' }}</btn></h1>
       <!-- <h2>{{ testPremium() }}</h2> -->
       <button class="btn btn-primary"  @click="displayDetails()" >{{ messageDisplayDetails }}</button>
       <div v-if="details">
@@ -38,26 +38,23 @@ const props = defineProps({
       type : Boolean,
       required : false,
       default : false,
-      // validator : (value)=>{
-      //   return value === 'abc' || value === 'xyz';
-      // },
     },
 });
 
 function displayDetails(){
   details.value = !details.value;
 }
-function premium(){
 
+function premiumiser() {
+  premiumData.value = !premiumData.value;
+  emit('mon-event-premium');
 }
 
+const premiumData = ref(props.premium)
 
 const details = ref(false);
 
-const emit = defineEmits({
-  // v-model event with validation
-  'update:modelValue': (value) => value !== null,
-});
+const emit = defineEmits(['mon-event-premium']);
 
 const messageDisplayDetails = computed(()=>{
   return details.value ? 'Masquer les détails' : 'Afficher les détails';
