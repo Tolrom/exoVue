@@ -1,5 +1,10 @@
 <template>
   <div>
+    <NewFriend 
+      class="p-5 w-50"
+      @add-friend-emit="addFriend">
+    </NewFriend>
+    
     <OneFriend
       v-for="ami in lesAmis" 
       :id="ami.id" 
@@ -14,6 +19,7 @@
 </template>
 
 <script setup lang='js'>
+import NewFriend from './NewFriend.vue';
 import OneFriend from './OneFriend.vue';
 import { ref } from 'vue';
 
@@ -44,6 +50,19 @@ function reactionStatus(leId, premiumData){
     Email :  ${result.email}
     Il est  ${premiumData ? 'trop cool' : 'grave nul'}\n
   `);
+}
+function addFriend(formData){
+  console.log(formData);
+  let ami = 
+    {
+        id: formData.id,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        premium: formData.premium
+    }
+    console.log(ami);
+  lesAmis.value.push(ami);
 }
 
 </script>

@@ -42,11 +42,13 @@ const premiumData = ref(props.premium);
 const details = ref(false);
 
 const emit = defineEmits({
-  'mon-event-premium': (param) => {
-    if(!param){
+  'mon-event-premium': (id, premium) => {
+    if(!id){
       console.error('ID non identifié!')
+      console.log(premium);
       return false;
     }
+    console.log(premium);
     return true;
   }
 });
