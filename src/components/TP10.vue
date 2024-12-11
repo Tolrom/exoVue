@@ -34,9 +34,16 @@ const lesAmis = ref([
     }
 ]);
 
-function reactionStatus(leId){
-  let result = lesAmis.value.find((e)=> e.id=leId) 
-  console.log(result);
+function reactionStatus(leId, premiumData){
+  let result = lesAmis.value.find((e)=> e.id == leId) 
+  console.log(`
+    Ami identifié : 
+    ID :  ${result.id}
+    Name :  ${result.name}
+    Phone :  ${result.phone}
+    Email :  ${result.email}
+    Il est  ${premiumData ? 'trop cool' : 'grave nul'}\n
+  `);
 }
 
 </script>

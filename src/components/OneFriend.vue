@@ -38,8 +38,18 @@ const props = defineProps({
     },
 });
 const premiumData = ref(props.premium);
+
 const details = ref(false);
-const emit = defineEmits(['mon-event-premium']);
+
+const emit = defineEmits({
+  'mon-event-premium': (param) => {
+    if(!param){
+      console.error('ID non identifié!')
+      return false;
+    }
+    return true;
+  }
+});
 
 function displayDetails(){
   details.value = !details.value;
@@ -47,7 +57,8 @@ function displayDetails(){
 
 function premiumiser() {
   premiumData.value = !premiumData.value;
-  emit('mon-event-premium', props.id);
+  emit('mon-event-premium', props.id, premiumData.value);
+  // emit('mon-event-premium');
 }
 
 
