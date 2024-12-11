@@ -4,7 +4,7 @@
       class="p-5 w-50"
       @add-friend-emit="addFriend">
     </NewFriend>
-    
+
     <OneFriend
       v-for="ami in lesAmis" 
       :id="ami.id" 
@@ -12,7 +12,8 @@
       :phone="ami.phone" 
       :mail="ami.email" 
       :premium="ami.premium" 
-      @mon-event-premium="reactionStatus"
+      @my-premium-event="reactionStatus"
+      @delete-friend-emit="deleteFriend"
     >
     </OneFriend>
   </div>
@@ -40,6 +41,11 @@ const lesAmis = ref([
     }
 ]);
 
+/**
+ * This function logs the friend in console
+ * @param leId The ID of the friend clicked on
+ * @param premiumData The premium status of the friend
+ */
 function reactionStatus(leId, premiumData){
   let result = lesAmis.value.find((e)=> e.id == leId) 
   console.log(`
@@ -51,6 +57,11 @@ function reactionStatus(leId, premiumData){
     Il est  ${premiumData ? 'trop cool' : 'grave nul'}\n
   `);
 }
+
+/**
+ * This function adds a friend emitted by the NewFriend component
+ * @param formData This param is the add friend form as an object
+ */
 function addFriend(formData){
   console.log(formData);
   let ami = 
@@ -63,6 +74,16 @@ function addFriend(formData){
     }
     console.log(ami);
   lesAmis.value.push(ami);
+}
+
+/**
+ * This function handles friends suppression
+ * @param id The ID of the friend to be deleted
+ */
+function deleteFriend(id) {
+  let index = lesAmis.value.findIndex((e)=> e.id == id);
+  console.log(index);
+  lesAmis.value.splice(index,1);
 }
 
 </script>
