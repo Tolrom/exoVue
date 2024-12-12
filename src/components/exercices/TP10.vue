@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang='js'>
-import NewFriend from './NewFriend.vue';
-import OneFriend from './OneFriend.vue';
+import NewFriend from '../shared/NewFriend.vue';
+import OneFriend from '../shared/OneFriend.vue';
 import { ref } from 'vue';
 
 const lesAmis = ref([

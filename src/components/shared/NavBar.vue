@@ -11,6 +11,12 @@
           <router-link class="nav-link active" aria-current="page" to="/home">Home</router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link active" aria-current="page" to="/register">Register</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link active" aria-current="page" to="/login">Login</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/interpolation" class="nav-link active">Interpolation</router-link>
         </li>
         <li class="nav-item dropdown">
