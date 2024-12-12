@@ -1,15 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-
-defineProps({
-  msg: String,
-})
-
 const count = ref(0)
 </script>
 
 <template>
-  <h1>YO LA TEAM</h1>
+  <h1 class="text-center m-5">YO LA TEAM</h1>
 </template>
 
 <style scoped>

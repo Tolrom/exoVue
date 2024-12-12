@@ -1,15 +1,12 @@
 <template>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Tolrom.js</a>
+    <router-link class="navbar-brand" to="/home">Tolrom.js</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <router-link class="nav-link active" aria-current="page" to="/home">Home</router-link>
-        </li>
         <li class="nav-item">
           <router-link class="nav-link active" aria-current="page" to="/register">Register</router-link>
         </li>
@@ -38,7 +35,8 @@
             <li><router-link class="dropdown-item" to="/tp-11">TP-11 (lifecycle)</router-link></li>
             <li><router-link class="dropdown-item" to="/tp-12">TP-12 (items routing)</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">C'est déjà pas mal</a></li>
+            <li><router-link class="dropdown-item" to="/charts">Graphiques</router-link></li>
+            <li><router-link class="dropdown-item" to="/pinia-counter">Pinia</router-link></li>
           </ul>
         </li>
       </ul>

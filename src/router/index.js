@@ -111,6 +111,16 @@ const router = createRouter({
     component: () => import("../components/views/Evaluation.vue"),
   },
   {
+    path: '/charts',
+    name : 'Graphiques',
+    component: () => import("../components/exercices/ChartJS.vue"),
+  },
+  {
+    path: '/pinia-counter',
+    name : 'Compteur Pinia',
+    component: () => import("../components/views/CounterPinia.vue"),
+  },
+  {
     path : '/:pathMatch(.*)*',
     name : 'Not Found',
     component : () => import("../components/views/NotFound.vue"),
