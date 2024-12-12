@@ -1,0 +1,32 @@
+<template>
+  <div>
+    <div class="px-2 bg-warning" >
+      <div class="form-group">
+        <h1>Formulaire d'édition</h1>
+        <label for="inputId">Un truc</label>
+        <input type="text" class="form-control" id="input1" placeholder="Hello" v-model="input1" >
+      </div>
+      <div class="form-group">
+        <label for="inputName">Un autre truc</label>
+        <input type="text" class="form-control" id="input2" placeholder="World" v-model="input2">
+      </div>
+      <button class="btn btn-warning m-3 border-black" @click="emit('updateData', input1, input2)" >MAJ des data</button>
+    </div>
+  </div>
+</template>
+
+<script setup lang='js'>
+import { ref } from 'vue'
+
+const input1 = ref(''),
+      input2 = ref('');
+
+const emit = defineEmits({
+  // v-model event with validation
+  'updateData': (value) => value !== null,
+});
+
+</script>
+
+<style scoped lang="css">
+</style>

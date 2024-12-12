@@ -106,6 +106,11 @@ const router = createRouter({
     ],
   },
   {
+    path: '/evaluation',
+    name : 'Evaluation',
+    component: () => import("../components/views/Evaluation.vue"),
+  },
+  {
     path : '/:pathMatch(.*)*',
     name : 'Not Found',
     component : () => import("../components/views/NotFound.vue"),
@@ -114,16 +119,24 @@ const router = createRouter({
 
 
 // Vérification avant chaque navigation
-router.beforeEach((to, from, next) => {
-  const currentUser = auth.currentUser;
-  console.log(currentUser);
+let isAuthChecked = false;
 
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-      if (!currentUser) {
-          next({ name: "Login" }); // Redirection vers la page de connexion si non authentifié
-      } else {
-          next();
-      }
+router.beforeEach((to, from, next) => {
+  if (!isAuthChecked) {
+      auth.onAuthStateChanged((user) => {
+          isAuthChecked = true;
+          const currentUser = user;
+
+          if (to.matched.some((record) => record.meta.requiresAuth)) {
+              if (!currentUser) {
+                  next({ name: "Login" });
+              } else {
+                  next();
+              }
+          } else {
+              next();
+          }
+      });
   } else {
       next();
   }

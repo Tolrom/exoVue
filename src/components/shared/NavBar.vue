@@ -17,7 +17,7 @@
           <router-link class="nav-link active" aria-current="page" to="/login">Login</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/interpolation" class="nav-link active">Interpolation</router-link>
+          <router-link to="/evaluation" class="nav-link active">Evaluation</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
