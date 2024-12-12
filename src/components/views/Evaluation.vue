@@ -1,8 +1,8 @@
 <template>
   <div>
     <ActiveUser
-      :input1="input1"
-      :input2="input2"
+      :nom="nomData"
+      :age="Number(ageData)"
     ></ActiveUser>
     <UserData
       @updateData="updateData"
@@ -15,17 +15,17 @@ import { ref } from 'vue';
 import ActiveUser from '../shared/ActiveUser.vue';
 import UserData from '../shared/UserData.vue';
 
-const input1 = ref('Jeffff'),
-      input2 = ref('Seagal');
+const nomData = ref('Jeffff'),
+      ageData = ref(78);
 
 function updateData(emit1, emit2) {
   console.log(`
     Ca marche
-    1 :${emit1}
-    2 :${emit2}
+    Nom :${emit1}
+    Age :${emit2}
   `)
-  input1.value = emit1,
-  input2.value = emit2;
+  nomData.value = emit1,
+  ageData.value = emit2;
 }
 
 
